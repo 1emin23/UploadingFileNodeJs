@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Hello Anglea</h3>
+
+    <form action="/share" method="post" enctype="multipart/form-data">
+        <label for="uploadFile">Göndermek istediğiniz dosyaları seçiniz:</label>
+        <hr>
+        <input type="file" name="file" id="uploadFile" accept="image/png, image/jpeg" required>
+        <hr>
+        <input type="submit" value="Yükle">
+    </form>
+
+    <!-- Dosyaları listeleme -->
+    <ul>
+        <% if (files.length> 0) { %>
+            <% files.forEach(element=> { %>
+                <li>
+                    <a href="<%= '/uploads/' + element %>" target="_blank">
+                        <%= element %>
+                    </a>
+                </li>
+                <% }) %>
+                    <% } %>
+
+    </ul>
+
+</body>
+
+</html>
